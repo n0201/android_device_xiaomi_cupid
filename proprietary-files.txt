@@ -888,6 +888,9 @@ vendor/lib64/libmialgo_basic.so
 vendor/lib64/libmialgo_det_ldc.so
 vendor/lib64/libmialgo_ellc.so
 vendor/lib64/libmialgo_globalsaliency.so
+vendor/lib64/libmegface.so
+vendor/lib64/libMegviiFacepp-0.5.2.so
+vendor/etc/camera/megviifacepp_0_5_2_model
 vendor/lib64/libmialgo_ie_capture.so
 vendor/lib64/libmialgo_ie_preview.so
 vendor/lib64/libmialgo_image_colourkeeping.so
