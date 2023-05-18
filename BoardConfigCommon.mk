@@ -98,15 +98,10 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 include $(COMMON_PATH)/build/utils.mk
 
 include $(COMMON_PATH)/kernel/kernel-platform-board.mk
-include vendor/qcom/opensource/audio-kernel/audio_kernel_vendor_board.mk
-include vendor/qcom/opensource/camera-kernel/board.mk
-include vendor/qcom/opensource/dataipa/dataipa_dlkm_vendor_board.mk
-include vendor/qcom/opensource/datarmnet-ext/datarmnet_ext_dlkm_vendor_board.mk
-include vendor/qcom/opensource/datarmnet/datarmnet_dlkm_vendor_board.mk
-include vendor/qcom/opensource/display-drivers/display_driver_board.mk
-include vendor/qcom/opensource/eva-kernel/eva_kernel_board.mk
-include vendor/qcom/opensource/mmrm-driver/mmrm_kernel_board.mk
-include vendor/qcom/opensource/video-driver/video_kernel_board.mk
+
+BOARD_USES_DT := true
+TARGET_NO_KERNEL := false
+TARGET_NO_KERNEL_OVERRIDE := true
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
@@ -125,7 +120,8 @@ BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
     bootinfo.fingerprint=$(EVOLUTION_VERSION) \
-    mtdoops.fingerprint=$(EVOLUTION_VERSION)
+    mtdoops.fingerprint=$(EVOLUTION_VERSION) \
+    androidboot.selinux=permissive
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \

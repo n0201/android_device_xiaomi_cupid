@@ -1,7 +1,5 @@
-ifeq ($(TARGET_USES_KERNEL_PLATFORM),true)
-
 ifeq ($(wildcard $(KERNEL_PREBUILT_DIR)/),)
-$(warning $(KERNEL_PREBUILT_DIR) does not exist and TARGET_USES_KERNEL_PLATFORM=$(TARGET_USES_KERNEL_PLATFORM))
+$(warning $(KERNEL_PREBUILT_DIR) does not exist)
 else
 ################################################################################
 # UAPI headers
@@ -51,5 +49,3 @@ BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(wildcard $(KERNEL_PREBUILT_DIR)/
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(wildcard $(KERNEL_PREBUILT_DIR)/vendor_dlkm/modules.blocklist)
 
 endif # ($(wildcard $(KERNEL_PREBUILT_DIR)/),)
-
-endif # ($(TARGET_USES_KERNEL_PLATFORM),true)
