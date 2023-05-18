@@ -72,6 +72,9 @@ function blob_fixup() {
         vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
             sed -ni '/dolby/!p' "${2}"
             ;;
+        vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
     esac
 }
 

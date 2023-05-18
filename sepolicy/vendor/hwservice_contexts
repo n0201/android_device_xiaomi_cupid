@@ -12,3 +12,6 @@ vendor.xiaomi.hardware.mtdservice::IMTService       u:object_r:hal_mtdservice_hw
 vendor.xiaomi.hardware.tidaservice::ITidaService       u:object_r:hal_tidaservice_hwservice:s0
 vendor.xiaomi.hardware.bgservice::IBGService                 u:object_r:vendor_hal_camerapostproc_xiaomi_hwservice:s0
 vendor.xiaomi.hardware.fx.tunnel::IMiFxTunnel                                        u:object_r:vendor_hal_fingerprint_hwservice_xiaomi:s0
+
+# Vibrator Feature
+vendor.xiaomi.hardware.vibratorfeature::IVibratorFeature            u:object_r:vendor_hal_vibratorfeature_hwservice:s0
