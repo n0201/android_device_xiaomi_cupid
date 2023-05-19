@@ -123,8 +123,7 @@ BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
     bootinfo.fingerprint=$(EVOLUTION_VERSION) \
-    mtdoops.fingerprint=$(EVOLUTION_VERSION) \
-    androidboot.selinux=permissive
+    mtdoops.fingerprint=$(EVOLUTION_VERSION)
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
