@@ -90,7 +90,7 @@ DEVICE_MANIFEST_TARO_FILES := \
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/hidl/vendor_framework_compatibility_matrix.xml \
     $(COMMON_PATH)/hidl/xiaomi_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/evolution/config/device_framework_matrix.xml
 
 # Kernel
 # is-board-platform-in-list is used in split files below
@@ -124,8 +124,8 @@ BOARD_VENDOR_RAMDISK_FRAGMENT.dlkm.KERNEL_MODULE_DIRS := top
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
-    bootinfo.fingerprint=$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=$(LINEAGE_VERSION)
+    bootinfo.fingerprint=$(EVOLUTION_VERSION) \
+    mtdoops.fingerprint=$(EVOLUTION_VERSION)
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
@@ -214,14 +214,3 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-PRODUCT_VENDOR_MOVE_ENABLED := true
-WIFI_DRIVER_INSTALL_TO_KERNEL_OUT := true
-ifneq ($(TARGET_WLAN_CHIP),)
-	BOARD_VENDOR_KERNEL_MODULES += $(foreach chip, $(TARGET_WLAN_CHIP), $(KERNEL_MODULES_OUT)/$(WLAN_CHIPSET)_$(chip).ko)
-else
-	BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/qca_cld3_wlan.ko
-endif
-
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB_EVENT := "ON"
-BOARD_HOSTAPD_PRIVATE_LIB_EVENT := "ON"
