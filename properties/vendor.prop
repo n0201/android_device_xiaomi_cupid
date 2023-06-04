@@ -218,6 +218,7 @@ ro.hardware.camera=xiaomi
 
 # Display
 vendor.display.comp_mask=0
+ro.hwui.render_ahead=2
 vendor.display.disable_3d_adaptive_tm=0
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
