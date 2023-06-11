@@ -8,7 +8,7 @@
     <integer name="config_udfpsEnrollProgressBar" translatable="false">113</integer>
 
     <!-- Doze: does this device support STATE_DOZE?  -->
-    <bool name="doze_display_state_supported">true</bool>
+    <bool name="doze_display_state_supported">false</bool>
 
     <!-- Preferred refresh rate at keyguard, if supported by the display. Overrides
          keyguardMaxRefreshRate. -->
