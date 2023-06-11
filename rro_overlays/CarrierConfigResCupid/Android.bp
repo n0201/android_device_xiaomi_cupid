@@ -4,7 +4,7 @@
 //
 
 runtime_resource_overlay {
-    name: "WifiResTarget",
-    sdk_version: "current",
-    vendor: true,
+    name: "CarrierConfigResCupid",
+    aaptflags: ["--keep-raw-values"],
+    product_specific: true,
 }
