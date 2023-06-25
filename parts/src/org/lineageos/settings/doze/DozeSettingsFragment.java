@@ -27,7 +27,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Switch;
-
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
@@ -38,17 +38,14 @@ import com.android.settingslib.widget.MainSwitchPreference;
 import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.R;
+import org.lineageos.settings.utils.FileUtils;
 
-public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
-        OnMainSwitchChangeListener {
-
+public class DozeSettingsFragment extends PreferenceFragment
+        implements OnPreferenceChangeListener, OnMainSwitchChangeListener {
     private MainSwitchPreference mSwitchBar;
 
     private SwitchPreference mAlwaysOnDisplayPreference;
-
-    private SwitchPreference mPickUpPreference;
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPocketPreference;
+    private ListPreference mDozeBrightnessPreference;
 
     private Handler mHandler = new Handler();
 
@@ -56,8 +53,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.doze_settings);
 
-        SharedPreferences prefs = getActivity().getSharedPreferences("doze_settings",
-                Activity.MODE_PRIVATE);
+        SharedPreferences prefs =
+                getActivity().getSharedPreferences("doze_settings", Activity.MODE_PRIVATE);
         if (savedInstanceState == null && !prefs.getBoolean("first_help_shown", false)) {
             showHelp();
         }
@@ -73,34 +70,21 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mAlwaysOnDisplayPreference.setChecked(DozeUtils.isAlwaysOnEnabled(getActivity()));
         mAlwaysOnDisplayPreference.setOnPreferenceChangeListener(this);
 
-        PreferenceCategory pickupSensorCategory = (PreferenceCategory) getPreferenceScreen().
-                findPreference(DozeUtils.CATEG_PICKUP_SENSOR);
-        PreferenceCategory proximitySensorCategory = (PreferenceCategory) getPreferenceScreen().
-                findPreference(DozeUtils.CATEG_PROX_SENSOR);
+        mDozeBrightnessPreference = (ListPreference) findPreference(DozeUtils.DOZE_BRIGHTNESS_KEY);
+        mDozeBrightnessPreference.setEnabled(
+                dozeEnabled && DozeUtils.isAlwaysOnEnabled(getActivity()));
+        mDozeBrightnessPreference.setOnPreferenceChangeListener(this);
 
-        mPickUpPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_PICK_UP_KEY);
-        mPickUpPreference.setEnabled(dozeEnabled);
-        mPickUpPreference.setOnPreferenceChangeListener(this);
-
-        mHandwavePreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_HAND_WAVE_KEY);
-        mHandwavePreference.setEnabled(dozeEnabled);
-        mHandwavePreference.setOnPreferenceChangeListener(this);
-
-        mPocketPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_POCKET_KEY);
-        mPocketPreference.setEnabled(dozeEnabled);
-        mPocketPreference.setOnPreferenceChangeListener(this);
-
-        // Hide proximity sensor related features if the device doesn't support them
-        if (!DozeUtils.getProxCheckBeforePulse(getActivity())) {
-            getPreferenceScreen().removePreference(proximitySensorCategory);
-        }
-
-        // Hide AOD if not supported and set all its dependents otherwise
+        // Hide AOD and doze brightness if not supported and set all its dependents otherwise
         if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
+            getPreferenceScreen().removePreference(mDozeBrightnessPreference);
         } else {
-            pickupSensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
-            proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
+            if (!FileUtils.isFileWritable(DozeUtils.DOZE_MODE_PATH)) {
+                getPreferenceScreen().removePreference(mDozeBrightnessPreference);
+            } else {
+                DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
+            }
         }
     }
 
@@ -108,9 +92,17 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (DozeUtils.ALWAYS_ON_DISPLAY.equals(preference.getKey())) {
             DozeUtils.enableAlwaysOn(getActivity(), (Boolean) newValue);
+            mDozeBrightnessPreference.setEnabled((Boolean) newValue);
+        } else if (DozeUtils.DOZE_BRIGHTNESS_KEY.equals(preference.getKey())) {
+            if (!DozeUtils.DOZE_BRIGHTNESS_AUTO.equals((String) newValue)) {
+                DozeUtils.setDozeMode((String) newValue);
+            }
         }
 
-        mHandler.post(() -> DozeUtils.checkDozeService(getActivity()));
+        mHandler.post(() -> {
+            DozeUtils.checkDozeService(getActivity());
+            DozeUtils.updateDozeBrightnessIcon(getContext(), mDozeBrightnessPreference);
+        });
 
         return true;
     }
@@ -127,10 +119,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             mAlwaysOnDisplayPreference.setChecked(false);
         }
         mAlwaysOnDisplayPreference.setEnabled(isChecked);
-
-        mPickUpPreference.setEnabled(isChecked);
-        mHandwavePreference.setEnabled(isChecked);
-        mPocketPreference.setEnabled(isChecked);
+        mDozeBrightnessPreference.setEnabled(
+                isChecked && DozeUtils.isAlwaysOnEnabled(getActivity()));
     }
 
     public static class HelpDialogFragment extends DialogFragment {
@@ -145,7 +135,8 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
         @Override
         public void onCancel(DialogInterface dialog) {
-            getActivity().getSharedPreferences("doze_settings", Activity.MODE_PRIVATE)
+            getActivity()
+                    .getSharedPreferences("doze_settings", Activity.MODE_PRIVATE)
                     .edit()
                     .putBoolean("first_help_shown", true)
                     .commit();
