@@ -22,16 +22,6 @@
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">false</bool>
 
-    <!-- Pocket Lock -->
-    <bool name="config_pocketModeSupported">true</bool>
-    <bool name="config_pocketUseLightSensor">false</bool>
-
-    <!-- Default value for proximity check on screen wake
-     NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">300</integer>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
-
     <!-- The list of package IDs that are allowed to use aux cameras.
          NOTE: If this list is empty then all apps will be able to use aux cameras. -->
     <string-array name="config_cameraAuxPackageAllowList" translatable="false">
