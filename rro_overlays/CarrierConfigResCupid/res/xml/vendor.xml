@@ -2082,6 +2082,7 @@
         <boolean name="show_call_session_event_toast" value="false" />
         <boolean name="show_data_usage_toast" value="false" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
+        <boolean name="hide_lte_plus_data_icon_bool" value="false"/>
         <string-array name="apn_hide_rule_strings_array" num="2">
             <item value="type" />
             <item value="fota,ims" />
