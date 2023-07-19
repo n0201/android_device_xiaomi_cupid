@@ -321,6 +321,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigResCupid \
     FaceUnlockServiceOverlay \
     FrameworksResCupid \
+    PixelSetupWizardResCupid \
     SettingsResCupid \
     SystemUIResCupid \
     TelephonyResCupid \
