@@ -94,6 +94,9 @@
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
 
+    <!-- Whether or not wcg mode should be enabled on this device -->
+    <bool name="config_enableWcgMode">true</bool>
+
     <string name="config_mainBuiltInDisplayCutout" translatable="false">M -33 52 a 33 33 0 1 0 66 0 a 33 33 0 1 0 -66 0 Z</string>
 
     <!--Like config_mainBuiltInDisplayCutout, but this path is used to report the
