@@ -28,3 +28,7 @@ vendor.voice.path.for.pcm.voip=true
 
 # Radio
 persist.vendor.radio.hidl_dev_service=true
+
+# Volume
+ro.config.vc_call_vol_steps=11
+ro.config.media_vol_steps=25
