@@ -67,6 +67,9 @@ function blob_fixup() {
         vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
+        vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
+            sed -ni '/ozoaudio/!p' "${2}"
+            ;;
     esac
 }
 

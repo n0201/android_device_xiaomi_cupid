@@ -280,7 +280,12 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libcodec2_hidl@1.0.vendor \
+    libminijail \
+    libminijail.vendor \
+    libavservices_minijail \
+    libcodec2_hidl@1.1.vendor \
+    libavservices_minijail_vendor \
+    libavservices_minijail.vendor \
     libcodec2_soft_common.vendor \
     libsfplugin_ccodec_utils.vendor
 
