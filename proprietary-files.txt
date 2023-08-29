@@ -269,10 +269,6 @@ vendor/lib64/libresampler.so
 vendor/lib64/libsndcardparser.so
 vendor/lib64/libxlog.so
 
-# Audio soundfx - from taro
-vendor/lib/soundfx/libvolumelistener.so|beee83ef691b3e755228da6ce9df4c4c8642fda5
-vendor/lib64/soundfx/libvolumelistener.so|b31d53cd125110980915e861cad00bdbec5a4f19
-
 # Audio soundfx
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libhwdap.so
