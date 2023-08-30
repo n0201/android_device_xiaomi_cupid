@@ -3939,18 +3939,6 @@ vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
 vendor/bin/init.qcom.usb.sh
 vendor/etc/init/hw/init.qcom.usb.rc
 
-# Vibrator (Haptics)
-vendor/lib64/libaachaptics.so
-
-# Vibrator (Xiaomi)
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
-vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
-vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature@1.0-service.rc
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/vibrator.default.so
-vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
-
 # Vibrator
 vendor/firmware/0_click_P_RTP.bin
 vendor/firmware/101_offlineCountdown_RTP.bin
