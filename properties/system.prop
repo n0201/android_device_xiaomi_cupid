@@ -18,6 +18,7 @@ persist.dbg.volte_avail_ovr=1
 
 # LMK properties
 ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=50
 
 # Media
 media.aac_51_output_enabled=true
