@@ -16,6 +16,9 @@ ro.sf.force_hwc_brightness=1
 persist.dbg.wfc_avail_ovr=1
 persist.dbg.volte_avail_ovr=1
 
+# LMK properties
+ro.lmk.kill_heaviest_task=true
+
 # Media
 media.aac_51_output_enabled=true
 media.stagefright.enable-aac=true
