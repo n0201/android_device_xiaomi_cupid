@@ -2686,7 +2686,7 @@
         </int-array>
         <boolean name="allow_hold_call_during_emergency_bool" value="false" />
         <boolean name="vonr_enabled_bool" value="true" />
-        <boolean name="vonr_setting_visibility_bool" value="false" />
+        <boolean name="vonr_setting_visibility_bool" value="true" />
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
         <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
     </carrier_config>
