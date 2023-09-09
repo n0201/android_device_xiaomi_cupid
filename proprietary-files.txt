@@ -1024,7 +1024,6 @@ vendor/lib64/libdeflicker.so
 vendor/lib64/libdualcam_optical_zoom_control.so
 vendor/lib64/libdualcam_video_optical_zoom.so
 vendor/lib64/libellv.so
-vendor/lib64/libhdr10plus.so
 vendor/lib64/libhexagon_controller.so
 vendor/lib64/libhis_11_yaml_build.so
 vendor/lib64/libipebpsstriping.so
@@ -1736,7 +1735,6 @@ vendor/lib64/libdeflicker.so
 vendor/lib64/libdualcam_optical_zoom_control.so
 vendor/lib64/libdualcam_video_optical_zoom.so
 vendor/lib64/libellv.so
-vendor/lib64/libhdr10plus.so
 vendor/lib64/libhexagon_controller.so
 vendor/lib64/libhis_11_yaml_build.so
 vendor/lib64/libipebpsstriping.so
@@ -2078,10 +2076,17 @@ vendor/etc/display/qdcm_calib_data_xiaomi_42_02_0a_mp_cmd_mode_dsc_dsi_panel.jso
 vendor/etc/mdss_dsi_l3_42_02_0a_dsc_cmd_mi.xml
 
 # Display HDR
+vendor/lib/libhdrdynamic.so
+vendor/lib/libhdrdynamicootf.so
 vendor/lib/libhdr_backlight_adapter.so
 vendor/lib/libhdr_tm.so
+vendor/lib/libhdr_hbm.so
+vendor/lib64/libhdrdynamic.so
+vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libhdr_backlight_adapter.so
 vendor/lib64/libhdr_tm.so
+vendor/lib64/libhdr_hbm.so
+vendor/lib64/libhdr10plus.so
 
 # Display HWC
 vendor/bin/hw/vendor.qti.hardware.display.composer-service
