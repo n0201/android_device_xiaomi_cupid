@@ -341,6 +341,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigResCupid \
     FaceUnlockServiceOverlay \
     FrameworksResCupid \
+    NfcResCupid \
     PixelSetupWizardResCupid \
     SettingsResCupid \
     SystemUIResCupid \
