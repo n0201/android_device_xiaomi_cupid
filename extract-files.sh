@@ -70,6 +70,9 @@ function blob_fixup() {
         vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
             sed -ni '/ozoaudio/!p' "${2}"
             ;;
+    vendor/lib64/libqtikeymint.so)
+        "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk.so" "${2}"
+        ;;
     esac
 }
 
