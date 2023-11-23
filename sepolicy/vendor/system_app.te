@@ -1,5 +1,5 @@
 # Battery Health
-r_dir_file(system_app, sysfs_battery_supply)
+r_dir_file(system_app, vendor_sysfs_battery_supply);
 
 # Allow system_app to access Milpay interface
 allow system_app hal_mlipay_hwservice:hwservice_manager { find };
