@@ -2639,10 +2639,6 @@ vendor/lib64/hw/vulkan.adreno.so
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
-# Health
-vendor/lib/hw/android.hardware.health@2.0-impl-2.1-qti.so
-vendor/lib64/hw/android.hardware.health@2.0-impl-2.1-qti.so
-
 # Identity service
 vendor/bin/hw/android.hardware.identity-service-qti
 vendor/etc/init/android.hardware.identity-service-qti.rc
