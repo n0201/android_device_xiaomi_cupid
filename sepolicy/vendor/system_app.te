@@ -1,9 +1,18 @@
-# Battery Health
-r_dir_file(system_app, vendor_sysfs_battery_supply);
-
 # Allow system_app to access Milpay interface
 allow system_app hal_mlipay_hwservice:hwservice_manager { find };
 
 # Allow system_app to call Milpay HAL by binder
 binder_call(system_app, hal_mlipay_default)
 
+# Battery Health
+r_dir_file(system_app, vendor_sysfs_battery_supply);
+
+allow system_app sysfs_thermal:file write;
+allow system_app proc_pagetypeinfo:file read;
+allow system_app vendor_aware_available_prop:file read;
+
+# Xiaomi Parts
+allow system_app sysfs_thermal:file rw_file_perms;
+allow system_app nfc_service:service_manager find;
+allow system_app vendor_sysfs_graphics:dir r_dir_perms;
+allow system_app vendor_sysfs_graphics:file rw_file_perms;

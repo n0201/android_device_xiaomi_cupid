@@ -1,3 +1,13 @@
+# Dolby
+attribute hal_dms;
+attribute hal_dms_client;
+attribute hal_dms_server;
+
+# Mlipay
+attribute hal_mlipay;
+attribute hal_mlipay_client;
+attribute hal_mlipay_server;
+
 # Xiaomi Vibrator Feature Service
 attribute hal_vibratorfeature_xiaomi;
 attribute hal_vibratorfeature_xiaomi_client;
