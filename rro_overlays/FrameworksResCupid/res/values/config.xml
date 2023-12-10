@@ -743,7 +743,7 @@
     <integer-array name="config_udfps_sensor_props" translatable="false" >
         <item>540</item>
         <item>2163</item>
-        <item>107</item>
+        <item>95</item>
     </integer-array>
 
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
