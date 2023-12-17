@@ -13,7 +13,6 @@ debug.sf.disable_backpressure=1
 ro.sf.force_hwc_brightness=1
 
 # IMS
-persist.dbg.wfc_avail_ovr=1
 persist.dbg.volte_avail_ovr=1
 
 # LMK properties
