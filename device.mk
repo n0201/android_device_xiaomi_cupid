@@ -157,7 +157,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
     camera.device@1.0-impl \
     libcamera2ndk_vendor \
-    GcamGo \
     vendor.qti.hardware.camera.aon@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
@@ -415,9 +414,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti_vendor \
     vendor.qti.hardware.systemhelper@1.0.vendor
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
 
 # Recovery
 PRODUCT_PACKAGES += \
