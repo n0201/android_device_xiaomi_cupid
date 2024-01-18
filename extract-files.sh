@@ -76,9 +76,15 @@ function blob_fixup() {
         vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
             sed -ni '/ozoaudio/!p' "${2}"
             ;;
-    vendor/lib64/libqtikeymint.so)
-        "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk.so" "${2}"
-        ;;
+        vendor/lib64/libqtikeymint.so)
+            "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk.so" "${2}"
+            ;;
+        system/lib64/libcamera_algoup_jni.xiaomi.so|system/lib64/libcamera_mianode_jni.xiaomi.so)
+            "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
+            ;;
+        system/lib64/libmicampostproc_client.so)
+            "${PATCHELF}" --remove-needed "libhidltransport.so" "${2}"
+            ;;
     esac
 }
 
