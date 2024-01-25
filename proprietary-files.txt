@@ -1,3 +1,5 @@
+# All unpinned blobs below are extracted from cupid V14.0.7.0.TLCMIXM
+
 # ACDB
 vendor/etc/acdbdata/Forte_elus/Forte_elus_acdb_cal.acdb
 vendor/etc/acdbdata/Forte_elus/Forte_elus_workspaceFileXml.qwsp
@@ -1117,7 +1119,10 @@ vendor/lib64/vendor.xiaomi.hardware.bgservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0-service-impl.so
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.quickcamera@1.0.so
+
+# MIUI camera from from cupid V14.0.2.0.TLCMIXM
 product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk|981cfe8fb78426ab4cd9045961c187d4ae7ef291
+
 system/etc/public.libraries-xiaomi.txt
 system/lib64/libcamera_algoup_jni.xiaomi.so
 system/lib64/libcamera_mianode_jni.xiaomi.so
