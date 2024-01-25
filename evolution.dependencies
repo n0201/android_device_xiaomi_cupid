@@ -1,0 +1,62 @@
+[
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_device_qcom_cupid-kernel",
+        "target_path"  : "device/qcom/cupid-kernel",
+        "branch"       : "main"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/kernel_xiaomi_cupid",
+        "target_path"  : "kernel/xiaomi/cupid",
+        "branch"       : "a14"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/device_xiaomi_cupid",
+        "target_path"  : "device/xiaomi/cupid",
+        "branch"       : "android-14.0"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/proprietary_vendor_qcom_common",
+        "target_path"  : "vendor/qcom/common",
+        "branch"       : "uvite"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_device_qcom_common",
+        "target_path"  : "device/qcom/common",
+        "branch"       : "uvite"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_hardware_qcom-caf_sm8450_display",
+        "target_path"  : "hardware/qcom-caf/sm8450/display",
+        "branch"       : "sm8450"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_hardware_qcom-caf_sm8450_media",
+        "target_path"  : "hardware/qcom-caf/sm8450/media",
+        "branch"       : "sm8450"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_hardware_qcom-caf_sm8450_audio_primary-hal ",
+        "target_path"  : "hardware/qcom-caf/sm8450/audio/primary-hal",
+        "branch"       : "sm8450"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_hardware_qcom-caf_sm8450_audio_pal ",
+        "target_path"  : "hardware/qcom-caf/sm8450/audio/pal",
+        "branch"       : "sm8450"
+    },
+    { 
+        "remote"       : "github",
+        "repository"   : "yarpiin/android_hardware_qcom-caf_sm8450_audio_agm ",
+        "target_path"  : "hardware/qcom-caf/sm8450/audio/agm",
+        "branch"       : "sm8450"
+    }
+]
