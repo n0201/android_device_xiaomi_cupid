@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_cupid.mk
+    $(LOCAL_DIR)/derp_cupid.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_cupid-user \
-    evolution_cupid-userdebug \
-    evolution_cupid-eng
+    derp_cupid-user \
+    derp_cupid-userdebug \
+    derp_cupid-eng
